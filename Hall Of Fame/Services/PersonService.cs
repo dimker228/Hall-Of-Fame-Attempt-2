@@ -21,18 +21,10 @@ namespace Hall_Of_Fame.Services
         /// <summary>
         /// Получение Person
         /// </summary>
-        /// <returns>Person</returns>
+        /// <returns>persons</returns>
         public async Task<List<Person>> Get()
         {
-            var persons = await _context.Persons.Include(s => s.Skills).ToListAsync();
-            var result = new List<Person>();
-
-            foreach (Person person in persons)
-            {
-                result.Add(ToModelForGet(person));
-            }
-
-            return result;
+            return await _context.Persons.Include(s => s.Skills).ToListAsync();
         }
 
         /// <summary>

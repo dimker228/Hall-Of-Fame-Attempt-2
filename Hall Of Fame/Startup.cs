@@ -35,7 +35,7 @@ namespace Hall_Of_Fame
             }
             catch (Exception ex)
             {
-                return;
+                throw new Exception($"Ошибка при попытки выполнить Sql запрос:{ex}");
             }
 
             services.AddMvc();
