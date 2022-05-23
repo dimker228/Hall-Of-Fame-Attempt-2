@@ -37,7 +37,7 @@ namespace Hall_Of_Fame.Controllers
         /// </summary>
         /// <param Name="Id">Для получения по Id</param>
         /// <returns>Id</returns>
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Person>> Get(int id)
         {
             var getPerson = await _personService.Get(id);
@@ -88,7 +88,7 @@ namespace Hall_Of_Fame.Controllers
         /// </summary>
         /// <param Name="Id"></param>
         /// <returns>Person</returns> 
-        [HttpDelete("{Id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<int>> Delete(int id)
         {
             var delPerson = await _personService.Delete(id);
